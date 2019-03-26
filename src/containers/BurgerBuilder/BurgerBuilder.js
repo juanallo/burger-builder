@@ -54,11 +54,15 @@ class BurgerBuilder extends Component {
 	};
 
 	handlePurchase = () => {
-		this.setState({purchasing: true})
+		this.setState({purchasing: true});
 	};
 
 	handleCancelPurchase = () => {
-		this.setState({purchasing: false})
+		this.setState({purchasing: false});
+	};
+
+	handleCheckout = () => {
+		//TODO add real checkout.
 	};
 
 	handleAddIngredient = (type) => {
@@ -80,7 +84,11 @@ class BurgerBuilder extends Component {
 		return (
 			<Fragment>
 				<Modal show={this.state.purchasing} onModelClosed={this.handleCancelPurchase}>
-					<OrderSummary ingredients={this.state.ingredients}/>
+					<OrderSummary
+						ingredients={this.state.ingredients}
+						onCheckout={this.handleCheckout}
+						onCancel={this.handleCancelPurchase}
+					/>
 				</Modal>
 				<Burger ingredients={this.state.ingredients}/>
 				<BuildControls onAddIngredient={this.handleAddIngredient}
