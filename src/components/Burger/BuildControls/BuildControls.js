@@ -17,6 +17,7 @@ const BuildControls = (props) => {
 				return <BuildControl
 					onLess={() => props.onRemoveIngredient(c.type)}
 					onMore={() => props.onAddIngredient(c.type)}
+					disabled={props.disabled[c.type]}
 					key={c.label}
 					label={c.label} />
 			})}
