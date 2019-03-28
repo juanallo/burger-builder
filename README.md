@@ -1,4 +1,4 @@
-#Burger Builder
+# Burger Builder
 
 Burger builder application, where you can pick your ingredients and build your own burger!
 
